@@ -1,0 +1,29 @@
+import 'package:beauty_app/constants.dart';
+import 'package:beauty_app/screens/home/home_screen.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Beauty App',
+      theme: ThemeData(
+        fontFamily: 'Quicksand',
+        scaffoldBackgroundColor: kBackgroundColor,
+        primaryColor: kPrimaryColor,
+        textTheme: Theme.of(context).textTheme.apply(
+              bodyColor: kTextColor,
+              displayColor: kTextColor,
+              fontFamily: 'Quicksand',
+            ),
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
+      home: HomeScreen(),
+    );
+  }
+}
