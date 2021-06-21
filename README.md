@@ -1,4 +1,4 @@
-# design_thinker_app
+# beauty_app
 
 A new Flutter project.
 
