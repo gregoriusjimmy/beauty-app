@@ -1,4 +1,4 @@
-package com.example.design_thinker_app
+package com.example.beauty_app
 
 import io.flutter.embedding.android.FlutterActivity
 
