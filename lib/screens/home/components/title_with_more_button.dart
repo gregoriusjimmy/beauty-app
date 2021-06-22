@@ -18,7 +18,7 @@ class TitleWithMoreButton extends StatelessWidget {
                 style: Theme.of(context)
                     .textTheme
                     .bodyText2!
-                    .copyWith(fontSize: 18),
+                    .copyWith(fontSize: 20),
                 children: textSpan),
           ),
           Spacer(),
@@ -28,6 +28,7 @@ class TitleWithMoreButton extends StatelessWidget {
               'More',
               style: TextStyle(
                 color: kPrimaryColor,
+                fontSize: 16,
                 fontWeight: FontWeight.w700,
               ),
             ),
