@@ -1,4 +1,5 @@
 import 'package:beauty_app/constants.dart';
+import 'package:beauty_app/screens/details/details_screen.dart';
 import 'package:flutter/material.dart';
 
 class PopularSalons extends StatelessWidget {
@@ -17,7 +18,14 @@ class PopularSalons extends StatelessWidget {
             salonTitle: 'Cute Cut - Hair salon',
             distance: 1.6,
             rating: 4.5,
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(),
+                ),
+              );
+            },
           ),
           PopularSalonCard(
             imagePath: 'assets/images/3.jpg',
