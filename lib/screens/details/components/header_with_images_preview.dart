@@ -1,5 +1,5 @@
-import 'package:beauty_app/constants.dart';
-import 'package:beauty_app/screens/details/components/images_preview.dart';
+import 'package:beauty_services_app/constants.dart';
+import 'package:beauty_services_app/screens/details/components/images_preview.dart';
 import 'package:flutter/material.dart';
 
 class HeaderWithImagesPreview extends StatelessWidget {

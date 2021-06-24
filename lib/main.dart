@@ -1,5 +1,5 @@
-import 'package:beauty_app/constants.dart';
-import 'package:beauty_app/screens/home/home_screen.dart';
+import 'package:beauty_services_app/constants.dart';
+import 'package:beauty_services_app/screens/home/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Beauty App',
+      title: 'Beauty Services App',
       theme: ThemeData(
         fontFamily: 'Quicksand',
         scaffoldBackgroundColor: kBackgroundColor,

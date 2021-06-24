@@ -1,8 +1,8 @@
-import 'package:beauty_app/constants.dart';
-import 'package:beauty_app/screens/home/components/header.dart';
-import 'package:beauty_app/screens/home/components/popular_salons.dart';
-import 'package:beauty_app/screens/home/components/title_with_more_button.dart';
-import 'package:beauty_app/screens/home/components/top_services.dart';
+import 'package:beauty_services_app/constants.dart';
+import 'package:beauty_services_app/screens/home/components/header.dart';
+import 'package:beauty_services_app/screens/home/components/popular_salons.dart';
+import 'package:beauty_services_app/screens/home/components/title_with_more_button.dart';
+import 'package:beauty_services_app/screens/home/components/top_services.dart';
 import 'package:flutter/material.dart';
 
 class Body extends StatelessWidget {

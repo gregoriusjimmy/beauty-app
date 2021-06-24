@@ -1,5 +1,5 @@
-import 'package:beauty_app/constants.dart';
-import 'package:beauty_app/screens/details/details_screen.dart';
+import 'package:beauty_services_app/constants.dart';
+import 'package:beauty_services_app/screens/details/details_screen.dart';
 import 'package:flutter/material.dart';
 
 class PopularSalons extends StatelessWidget {
