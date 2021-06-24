@@ -32,7 +32,14 @@ class PopularSalons extends StatelessWidget {
             salonTitle: 'Easy Nails Spa',
             distance: 1.8,
             rating: 4.8,
-            press: () {},
+            press: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => DetailsScreen(),
+                ),
+              );
+            },
           ),
         ],
       ),
