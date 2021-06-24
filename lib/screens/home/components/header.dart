@@ -12,7 +12,7 @@ class Header extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: size.height * 0.32,
+      height: size.height * 0.30,
       padding: EdgeInsets.only(
         left: kDefaultPadding,
         right: kDefaultPadding,
