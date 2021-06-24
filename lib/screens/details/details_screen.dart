@@ -1,4 +1,5 @@
 import 'package:beauty_app/constants.dart';
+import 'package:beauty_app/screens/details/components/body.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
@@ -8,7 +9,7 @@ class DetailsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: Container(),
+      body: Body(),
     );
   }
 
