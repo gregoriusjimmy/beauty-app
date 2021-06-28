@@ -11,16 +11,17 @@ class ImagesPreview extends StatelessWidget {
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
-        margin: EdgeInsets.symmetric(
-          vertical: kDefaultPadding,
+        margin: EdgeInsets.only(
+          top: kDefaultPadding,
+          bottom: kDefaultPadding + 10,
         ),
         child: Row(
           children: <Widget>[
             ImagePreview(
-              imagePath: 'assets/images/1.jpg',
+              imagePath: 'assets/images/3.jpg',
             ),
             ImagePreview(
-              imagePath: 'assets/images/2.jpg',
+              imagePath: 'assets/images/4.jpg',
             ),
           ],
         ),

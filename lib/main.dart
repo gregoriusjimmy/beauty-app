@@ -16,10 +16,18 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Quicksand',
         scaffoldBackgroundColor: kBackgroundColor,
         primaryColor: kPrimaryColor,
-        textTheme: Theme.of(context).textTheme.apply(
+        textTheme: Theme.of(context)
+            .textTheme
+            .apply(
               bodyColor: kTextColor,
               displayColor: kTextColor,
               fontFamily: 'Quicksand',
+            )
+            .copyWith(
+              caption:
+                  TextStyle(color: kCaptionColor, fontWeight: FontWeight.w600),
+              subtitle2:
+                  TextStyle(color: kCaptionColor, fontWeight: FontWeight.w600),
             ),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),

@@ -1,4 +1,6 @@
 import 'package:beauty_services_app/constants.dart';
+import 'package:beauty_services_app/screens/details/components/menu_title.dart';
+import 'package:beauty_services_app/screens/details/components/service_items.dart';
 import 'package:flutter/material.dart';
 
 class SalonMenuNavigation extends StatelessWidget {
@@ -11,36 +13,57 @@ class SalonMenuNavigation extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(
           horizontal: kDefaultPadding, vertical: kDefaultPadding),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          DetailsMenuButton(text: 'Details'),
-          GestureDetector(
-            onTap: () {},
-            child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
-              child: Text(
-                'Services',
-                style: TextStyle(
-                  color: Colors.white,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: <Widget>[
+              SalonMenuNavigatonButton(text: 'Details'),
+              GestureDetector(
+                onTap: () {},
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                  child: Text(
+                    'Services',
+                    style: TextStyle(
+                      color: Colors.white,
+                    ),
+                  ),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30.0),
+                    color: kBlackButtonColor,
+                  ),
                 ),
               ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(30.0),
-                color: kBlackButtonColor,
-              ),
-            ),
+              SalonMenuNavigatonButton(text: 'Reviews'),
+              SalonMenuNavigatonButton(text: 'Portofolio'),
+            ],
           ),
-          DetailsMenuButton(text: 'Reviews'),
-          DetailsMenuButton(text: 'Portofolio'),
+          SizedBox(
+            height: 24.0,
+          ),
+          MenuTitle(
+            textSpans: [
+              TextSpan(text: 'Top '),
+              TextSpan(
+                text: 'services',
+                style: TextStyle(fontWeight: FontWeight.w600),
+              )
+            ],
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          ServiceItems()
         ],
       ),
     );
   }
 }
 
-class DetailsMenuButton extends StatelessWidget {
-  const DetailsMenuButton({
+class SalonMenuNavigatonButton extends StatelessWidget {
+  const SalonMenuNavigatonButton({
     Key? key,
     required this.text,
   }) : super(key: key);

@@ -18,10 +18,9 @@ class SalonTitleWithCallButton extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Cute Cut - Hair salon',
+                'Easy Nails Spa ',
                 style: Theme.of(context).textTheme.headline5!.copyWith(
                       fontWeight: FontWeight.w600,
-                      fontSize: size.width * 0.05,
                     ),
               ),
               SizedBox(
@@ -29,9 +28,7 @@ class SalonTitleWithCallButton extends StatelessWidget {
               ),
               Text(
                 'Wolva, Warsaw * 1.8km away',
-                style: Theme.of(context).textTheme.caption!.copyWith(
-                      fontSize: size.width * 0.035,
-                    ),
+                style: Theme.of(context).textTheme.subtitle2,
               ),
               SizedBox(height: 8.0),
               Row(
@@ -44,7 +41,7 @@ class SalonTitleWithCallButton extends StatelessWidget {
                     width: 4.0,
                   ),
                   Text(
-                    '4.5/5',
+                    '4.8/5',
                     style: TextStyle(fontWeight: FontWeight.w600),
                   )
                 ],
