@@ -63,6 +63,7 @@ class CallButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {},
+      borderRadius: BorderRadius.circular(25),
       child: Container(
         padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
         child: Row(

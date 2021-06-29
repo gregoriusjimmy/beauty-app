@@ -18,7 +18,7 @@ class DetailsScreen extends StatelessWidget {
       elevation: 0,
       leadingWidth: 120,
       leading: Container(
-        margin: EdgeInsets.only(left: kDefaultPadding),
+        margin: EdgeInsets.only(left: kDefaultPadding, right: kDefaultPadding),
         child: GestureDetector(
           onTap: () {
             Navigator.pop(context);
