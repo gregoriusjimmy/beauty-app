@@ -8,11 +8,13 @@ class ImagesPreview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return SingleChildScrollView(
       scrollDirection: Axis.horizontal,
       child: Container(
         margin: EdgeInsets.only(
-          top: kDefaultPadding,
+          top: size.height * 0.03,
           bottom: kDefaultPadding + 10,
         ),
         child: Row(
