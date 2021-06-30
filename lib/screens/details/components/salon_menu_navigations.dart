@@ -1,5 +1,6 @@
 import 'package:beauty_services_app/constants.dart';
 import 'package:beauty_services_app/screens/details/components/menu_title.dart';
+import 'package:beauty_services_app/screens/details/components/salon_menu_navigation_button.dart';
 import 'package:beauty_services_app/screens/details/components/service_items.dart';
 import 'package:flutter/material.dart';
 import 'package:enum_to_string/enum_to_string.dart';
@@ -25,6 +26,11 @@ class _SalonMenuNavigationsState extends State<SalonMenuNavigations> {
         SalonMenuNavigationButton(
           text: EnumToString.convertToString(navigation),
           active: currentActiveNavigation == navigation,
+          onTap: () {
+            setState(() {
+              currentActiveNavigation = navigation;
+            });
+          },
         ),
       );
     }
@@ -66,34 +72,6 @@ class _SalonMenuNavigationsState extends State<SalonMenuNavigations> {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class SalonMenuNavigationButton extends StatelessWidget {
-  const SalonMenuNavigationButton(
-      {Key? key, required this.text, this.active = false})
-      : super(key: key);
-  final String text;
-  final bool active;
-  @override
-  Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {},
-      child: Container(
-        padding:
-            active ? EdgeInsets.symmetric(horizontal: 20, vertical: 12) : null,
-        child: Text(
-          text,
-          style: active ? TextStyle(color: Colors.white) : null,
-        ),
-        decoration: active
-            ? BoxDecoration(
-                borderRadius: BorderRadius.circular(30.0),
-                color: kBlackButtonColor,
-              )
-            : null,
       ),
     );
   }
