@@ -1,15 +1,16 @@
 import 'package:beauty_services_app/constants.dart';
 import 'package:beauty_services_app/screens/details/components/body.dart';
+import 'package:beauty_services_app/services/salon.dart';
 import 'package:flutter/material.dart';
 
 class DetailsScreen extends StatelessWidget {
-  const DetailsScreen({Key? key}) : super(key: key);
-
+  const DetailsScreen({Key? key, required this.salon}) : super(key: key);
+  final Salon salon;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: buildAppBar(context),
-      body: Body(),
+      body: Body(salon: salon),
     );
   }
 

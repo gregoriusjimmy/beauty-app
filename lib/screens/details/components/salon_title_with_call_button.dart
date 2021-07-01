@@ -1,11 +1,14 @@
 import 'package:beauty_services_app/constants.dart';
+import 'package:auto_size_text/auto_size_text.dart';
+import 'package:beauty_services_app/services/salon.dart';
 import 'package:flutter/material.dart';
 
 class SalonTitleWithCallButton extends StatelessWidget {
   const SalonTitleWithCallButton({
     Key? key,
+    required this.salon,
   }) : super(key: key);
-
+  final Salon salon;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -13,40 +16,44 @@ class SalonTitleWithCallButton extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: <Widget>[
-          Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                'Easy Nails Spa ',
-                style: Theme.of(context).textTheme.headline5!.copyWith(
-                      fontWeight: FontWeight.w600,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                AutoSizeText(
+                  salon.title,
+                  maxLines: 1,
+                  style: Theme.of(context).textTheme.headline5!.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                ),
+                SizedBox(
+                  height: 8,
+                ),
+                Text(
+                  'Wolva, Warsaw * ${salon.distance}km away',
+                  style: Theme.of(context).textTheme.subtitle2,
+                ),
+                SizedBox(height: 8.0),
+                Row(
+                  children: <Widget>[
+                    Icon(
+                      Icons.star,
+                      color: kSecondaryColor,
                     ),
-              ),
-              SizedBox(
-                height: 8,
-              ),
-              Text(
-                'Wolva, Warsaw * 1.8km away',
-                style: Theme.of(context).textTheme.subtitle2,
-              ),
-              SizedBox(height: 8.0),
-              Row(
-                children: <Widget>[
-                  Icon(
-                    Icons.star,
-                    color: kSecondaryColor,
-                  ),
-                  SizedBox(
-                    width: 4.0,
-                  ),
-                  Text(
-                    '4.8/5',
-                    style: TextStyle(fontWeight: FontWeight.w600),
-                  )
-                ],
-              )
-            ],
+                    SizedBox(
+                      width: 4.0,
+                    ),
+                    Text(
+                      '${salon.rating}/5',
+                      style: TextStyle(fontWeight: FontWeight.w600),
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
+          SizedBox(width: 20.0),
           CallButton(),
         ],
       ),

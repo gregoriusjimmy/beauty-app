@@ -6,10 +6,11 @@ class HeaderWithImagesPreview extends StatelessWidget {
   const HeaderWithImagesPreview({
     Key? key,
     required this.size,
+    required this.imagePath,
   }) : super(key: key);
 
   final Size size;
-
+  final String imagePath;
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -19,7 +20,9 @@ class HeaderWithImagesPreview extends StatelessWidget {
           height: size.height * 0.17,
           color: kPrimaryColor,
         ),
-        ImagesPreview(),
+        ImagesPreview(
+          imagePath: imagePath,
+        ),
       ],
     );
   }

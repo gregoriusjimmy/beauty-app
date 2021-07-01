@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 class ImagesPreview extends StatelessWidget {
   const ImagesPreview({
     Key? key,
+    required this.imagePath,
   }) : super(key: key);
-
+  final String imagePath;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -20,7 +21,7 @@ class ImagesPreview extends StatelessWidget {
         child: Row(
           children: <Widget>[
             ImagePreview(
-              imagePath: 'assets/images/3.jpg',
+              imagePath: imagePath,
             ),
             ImagePreview(
               imagePath: 'assets/images/4.jpg',

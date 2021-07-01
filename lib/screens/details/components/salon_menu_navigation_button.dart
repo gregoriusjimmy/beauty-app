@@ -10,18 +10,23 @@ class SalonMenuNavigationButton extends StatelessWidget {
   final void Function() onTap;
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding:
-            active ? EdgeInsets.symmetric(horizontal: 20, vertical: 12) : null,
+        margin: !active
+            ? EdgeInsets.symmetric(horizontal: size.width * 0.03, vertical: 12)
+            : null,
+        padding: active
+            ? EdgeInsets.symmetric(horizontal: size.width * 0.03, vertical: 12)
+            : null,
         child: Text(
           text,
           style: active ? TextStyle(color: Colors.white) : null,
         ),
         decoration: active
             ? BoxDecoration(
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(size.width * 0.05),
                 color: kBlackButtonColor,
               )
             : null,

@@ -19,7 +19,7 @@ class SalonMenuNavigations extends StatefulWidget {
 class _SalonMenuNavigationsState extends State<SalonMenuNavigations> {
   MenuNavigations currentActiveNavigation = MenuNavigations.Services;
 
-  List<SalonMenuNavigationButton> updateSalonMenuNavigationButtons() {
+  List<SalonMenuNavigationButton> updateSalonMenuNavigationButtonsUI() {
     List<SalonMenuNavigationButton> menuButtons = [];
     for (var navigation in MenuNavigations.values) {
       menuButtons.add(
@@ -37,6 +37,47 @@ class _SalonMenuNavigationsState extends State<SalonMenuNavigations> {
     return menuButtons;
   }
 
+  List<Widget> updateSalonMenuContentUI() {
+    switch (currentActiveNavigation) {
+      case MenuNavigations.Details:
+        return [
+          MenuTitle(
+            textSpans: [TextSpan(text: 'Details')],
+          )
+        ];
+      case MenuNavigations.Services:
+        return [
+          MenuTitle(
+            textSpans: [
+              TextSpan(text: 'Top '),
+              TextSpan(
+                text: 'services',
+                style: TextStyle(fontWeight: FontWeight.w600),
+              )
+            ],
+          ),
+          SizedBox(
+            height: 20.0,
+          ),
+          ServiceItems()
+        ];
+      case MenuNavigations.Reviews:
+        return [
+          MenuTitle(
+            textSpans: [TextSpan(text: 'Reviews')],
+          )
+        ];
+      case MenuNavigations.Portofolio:
+        return [
+          MenuTitle(
+            textSpans: [TextSpan(text: 'Portfolio')],
+          )
+        ];
+      default:
+        return [Text('Can\' find menu')];
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -46,30 +87,14 @@ class _SalonMenuNavigationsState extends State<SalonMenuNavigations> {
         children: <Widget>[
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: updateSalonMenuNavigationButtons(),
+            children: updateSalonMenuNavigationButtonsUI(),
           ),
           SizedBox(
             height: 24.0,
           ),
-          Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                MenuTitle(
-                  textSpans: [
-                    TextSpan(text: 'Top '),
-                    TextSpan(
-                      text: 'services',
-                      style: TextStyle(fontWeight: FontWeight.w600),
-                    )
-                  ],
-                ),
-                SizedBox(
-                  height: 20.0,
-                ),
-                ServiceItems()
-              ],
-            ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: updateSalonMenuContentUI(),
           ),
         ],
       ),

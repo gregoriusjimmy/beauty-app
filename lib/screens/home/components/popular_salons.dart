@@ -1,6 +1,22 @@
 import 'package:beauty_services_app/constants.dart';
 import 'package:beauty_services_app/screens/details/details_screen.dart';
+import 'package:beauty_services_app/services/salon.dart';
 import 'package:flutter/material.dart';
+
+List<Salon> salons = [
+  Salon(
+    title: 'Cute Cut - Hair salon',
+    imagePath: 'assets/images/1.jpg',
+    distance: 1.6,
+    rating: 4.5,
+  ),
+  Salon(
+    imagePath: 'assets/images/3.jpg',
+    title: 'Easy Nails Spa',
+    distance: 1.8,
+    rating: 4.8,
+  )
+];
 
 class PopularSalons extends StatelessWidget {
   const PopularSalons({
@@ -14,29 +30,25 @@ class PopularSalons extends StatelessWidget {
       child: Row(
         children: [
           PopularSalonCard(
-            imagePath: 'assets/images/1.jpg',
-            salonTitle: 'Cute Cut - Hair salon',
-            distance: 1.6,
-            rating: 4.5,
+            salon: salons[0],
             press: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
+                  builder: (context) => DetailsScreen(salon: salons[0]),
                 ),
               );
             },
           ),
           PopularSalonCard(
-            imagePath: 'assets/images/3.jpg',
-            salonTitle: 'Easy Nails Spa',
-            distance: 1.8,
-            rating: 4.8,
+            salon: salons[1],
             press: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => DetailsScreen(),
+                  builder: (context) => DetailsScreen(
+                    salon: salons[1],
+                  ),
                 ),
               );
             },
@@ -50,17 +62,11 @@ class PopularSalons extends StatelessWidget {
 class PopularSalonCard extends StatelessWidget {
   const PopularSalonCard({
     Key? key,
-    required this.imagePath,
-    required this.salonTitle,
-    required this.distance,
-    required this.rating,
+    required this.salon,
     required this.press,
   }) : super(key: key);
 
-  final String imagePath;
-  final String salonTitle;
-  final double distance;
-  final double rating;
+  final Salon salon;
   final VoidCallback press;
 
   @override
@@ -81,12 +87,12 @@ class PopularSalonCard extends StatelessWidget {
             ClipRRect(
               borderRadius: BorderRadius.circular(16.0),
               child: Image(
-                image: AssetImage(imagePath),
+                image: AssetImage(salon.imagePath),
               ),
             ),
             SizedBox(height: kDefaultPadding - 8),
             Text(
-              '$salonTitle',
+              salon.title,
               style: Theme.of(context)
                   .textTheme
                   .subtitle1!
@@ -94,7 +100,7 @@ class PopularSalonCard extends StatelessWidget {
             ),
             SizedBox(height: kDefaultPadding / 3),
             Text(
-              '$distance km away',
+              '${salon.distance} km away',
               style: Theme.of(context).textTheme.caption,
             ),
             SizedBox(height: kDefaultPadding / 2),
@@ -108,7 +114,7 @@ class PopularSalonCard extends StatelessWidget {
                   width: 4.0,
                 ),
                 Text(
-                  '$rating/5',
+                  '${salon.rating}/5',
                   style: TextStyle(fontWeight: FontWeight.w600),
                 )
               ],
